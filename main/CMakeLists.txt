@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.10.2)
+set(CSRC main.c)
+set(libpath "misc/")
+add_subdirectory(misc)
+set(EXTRA_LIBS hap)
+include_directories(${libpath})
+add_executable(hello ${CSRC})
+target_link_libraries(hello ${EXTRA_LIBS})
+target_include_directories(hello PRIVATE ${libpath})
+
